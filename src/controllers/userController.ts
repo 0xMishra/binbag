@@ -19,7 +19,7 @@ export async function signup(req: Request, res: Response) {
     if (!parsedInputBody.success) {
       res.status(400).json({
         error: "Bad Request",
-        message: `Invalid input type: ${parsedInputBody.error.errors[0].path[0]}`,
+        message: `Invalid input type: ${parsedInputBody.error.errors[0].path[0]} (${parsedInputBody.error.errors[0].message})`,
       });
       return;
     }
@@ -67,7 +67,7 @@ export async function signin(req: Request, res: Response) {
     if (!parsedInputBody.success) {
       res.status(400).json({
         error: "Bad Request",
-        message: `Invalid input type: ${parsedInputBody.error.errors[0].path[0]}`,
+        message: `Invalid input type: ${parsedInputBody.error.errors[0].path[0]} (${parsedInputBody.error.errors[0].message})`,
       });
       return;
     }
@@ -139,7 +139,7 @@ export async function updateProfile(req: Request, res: Response) {
     if (!parsedInputBody.success) {
       res.status(400).json({
         error: "Bad Request",
-        message: `Invalid input type: ${parsedInputBody.error.errors[0].path[0]}`,
+        message: `Invalid input type: ${parsedInputBody.error.errors[0].path[0]} (${parsedInputBody.error.errors[0].message})`,
       });
       return;
     }
